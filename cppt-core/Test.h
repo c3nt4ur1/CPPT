@@ -15,12 +15,16 @@ class Test {
 public:
 
     Test(){
-        openOutputFile();
+        if(!resultsOutput.is_open()) {
+            openOutputFile();
+        }
         if(!resultsOutput.is_open()){
             cerr << "Failed to open output file\n";
             exit(205);
         }
     }
+
+    ~Test() = default;
 
     static void resetCounters(){
         passedTestCases = 0;
@@ -28,6 +32,7 @@ public:
     }
 
     static void pushFinalResults(){
+
         if(!resultsOutput.is_open()){
             cerr << "Unreachable output file\n";
             exit(103);
