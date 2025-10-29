@@ -17,7 +17,7 @@ bool test2(){
 }
 
 bool test3(){
-    return IntAssert("INT ASSERT FAILURE", 5, 5).passed;
+    return IntAssert("INT ASSERT FAILURE", 5, 3).passed;
 }
 
 
