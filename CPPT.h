@@ -7,7 +7,7 @@
 
 #endif
 
-#include "cppt-core/Controller.h"
+#include "cppt-core/CpptInit.h"
 #include "cppt-lib/IntAssert.h"
 #include "cppt-lib/DoubleAssert.h"
-#include "cppt-lib/ObjectAssert.h"
+

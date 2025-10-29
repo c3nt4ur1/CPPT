@@ -9,13 +9,22 @@
 
 #include "CPPT.h"
 bool test1(){
-
-    return IntAssert("NONE", 1, 1).passed;
-
+    return IntAssert("INT ASSERT PASS", 1, 1).passed;
 }
 
+bool test2(){
+    return IntAssertDiffers("INT DIFFER", 5, 3).passed;
+}
+
+bool test3(){
+    return IntAssert("INT ASSERT FAILURE", 5, 5).passed;
+}
+
+
 void registerCases(){ //Pushes the test cases to the function<bool()> queue
-    RegisterTest test1_reg(&test1);
+    Controller::addTestCase(test1);
+    Controller::addTestCase(test2);
+    Controller::addTestCase(test3);
 }
 
 

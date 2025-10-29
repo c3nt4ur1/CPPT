@@ -9,7 +9,7 @@
 #include <fstream>
 #include <iostream>
 
-#include "Test.h"
+#include "Controller.h"
 
 using namespace std;
 
