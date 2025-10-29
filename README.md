@@ -8,3 +8,6 @@
 
 * CPPT.h
   * Includes automatically all the necessary headers to the execution
+
+* Notes
+  * Each test case must be a bool-type function that receives no parameters
