@@ -30,6 +30,9 @@ public:
             cerr << "Failed to push out assertion\n";
             exit(102);
         }
+        if(!this->assertedCondition){
+            printGottenOutput();
+        }
     }
 
     DoubleAssert(int testNum, string testName, double expected, double actual)
@@ -56,7 +59,7 @@ private:
     }
 
     void printGottenOutput() const{
-        Test::resultsOutput << "EXPECTED: " << this->expected << " ACTUAL: " << this->actual << endl;
+        Test::resultsOutput << "\tEXPECTED: " << this->expected << " ACTUAL: " << this->actual << endl;
     }
 
     bool outputAssertion() override{
