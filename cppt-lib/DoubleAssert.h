@@ -6,8 +6,12 @@
 #define CPPT_DOUBLEASSERT_H
 
 #endif //CPPT_DOUBLEASSERT_H
+#include <cmath>
 
 #include "cppt-core/Assertion.h"
+
+//Considers a tolerance of 10^-10 in float point variations.
+//For precise calculation testing, the constructor must be reimplemented
 
 class DoubleAssert : public Assertion{
 
@@ -15,7 +19,7 @@ public:
     bool passed;
 
     DoubleAssert(string testName, double expected, double actual)
-    : Assertion(expected == actual, testName){
+    : Assertion(std::fabs(expected - actual) < 1e-10, testName){
 
         this->expected = expected;
         this->actual = actual;
@@ -29,7 +33,7 @@ public:
     }
 
     DoubleAssert(int testNum, string testName, double expected, double actual)
-            : Assertion(expected == actual, testName, testNum){
+            : Assertion(std::fabs(expected - actual) < 1e-9, testName, testNum){
         this->expected = expected;
         this->actual = actual;
 
