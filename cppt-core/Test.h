@@ -32,6 +32,9 @@ public:
     }
 
     static void pushFinalResults(){
+        if(!resultsOutput.is_open()){
+            openOutputFile();
+        }
 
         if(!resultsOutput.is_open()){
             cerr << "Unreachable output file\n";
