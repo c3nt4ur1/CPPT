@@ -37,9 +37,7 @@ public:
             cerr << "Failed to push out assertion\n";
             exit(102);
         }
-        if(!this->assertedCondition){
-            printGottenOutput();
-        }
+
     }
 
 private:
@@ -49,7 +47,7 @@ private:
     }
 
     void printGottenOutput() const{
-        Test::resultsOutput << "EXPECTED: " << this->expected << " ACTUAL: " << this->actual << endl;
+        Test::resultsOutput << "\tEXPECTED: " << this->expected << " ACTUAL: " << this->actual << endl;
     }
 
     bool outputAssertion() override{
@@ -59,11 +57,11 @@ private:
             return false;
         }
 
-        Test::resultsOutput << this->testName;
-
         if(this->testNumber != -1){
-            Test::resultsOutput << " " << this->testNumber;
+            Test::resultsOutput << "TEST NUM: " << this->testNumber << " | ";
         }
+
+        Test::resultsOutput << this->testName;
 
         if(this->passed){
             Test::resultsOutput << " " << "PASSED" << endl;
