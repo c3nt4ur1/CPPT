@@ -1,4 +1,4 @@
-# CPPT - The C++ Testing framework
+# CPPT - The runtime C++ Testing framework
 
 * cppt-lib
   * Contains the headers required to implement the tests
