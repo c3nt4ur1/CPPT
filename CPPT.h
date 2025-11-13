@@ -10,4 +10,6 @@
 #include "cppt-core/CpptInit.h"
 #include "cppt-lib/IntAssert.h"
 #include "cppt-lib/DoubleAssert.h"
+#include "cppt-lib/BooleanAssertTrue.h"
+#include "cppt-lib/BooleanAssertFalse.h"
 
