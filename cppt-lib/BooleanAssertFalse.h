@@ -1,16 +1,16 @@
 //
-// Created by ANBonin on 30/10/2025.
+// Created by ANBonin on 13/11/2025.
 //
 
-#ifndef CPPT_BOOLEANASSERT_H
-#define CPPT_BOOLEANASSERT_H
+#ifndef CPPT_BOOLEANASSERTFALSE_H
+#define CPPT_BOOLEANASSERTFALSE_H
 
 #include "cppt-core/Assertion.h"
 
-class BooleanAssertTrue : public Assertion{
+class BooleanAssertFalse : public Assertion{
 public:
-    BooleanAssertTrue(int testNum, string testName, bool condition)
-    : Assertion(condition, testName, testNum){
+    BooleanAssertFalse(int testNum, string testName, bool condition)
+            : Assertion(!condition, testName, testNum){ //The ! operator flip the false to true, setting passed == true
         this->passed = this->assertedCondition;
 
         if(!this->run()){
@@ -19,8 +19,8 @@ public:
         }
     }
 
-    BooleanAssertTrue(string testName, bool condition)
-            : Assertion(condition, testName){
+    BooleanAssertFalse(string testName, bool condition)
+    : Assertion(!condition, testName){ //The ! operator flip the false to true, setting passed == true
         this->passed = this->assertedCondition;
 
         if(!this->run()){
@@ -59,6 +59,8 @@ private:
         return true;
     }
 
+
 };
 
-#endif //CPPT_BOOLEANASSERT_H
+
+#endif //CPPT_BOOLEANASSERTFALSE_H
