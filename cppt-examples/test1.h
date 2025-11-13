@@ -32,6 +32,10 @@ bool test6(){
     return DoubleAssert("DoubleAssert with integer", 2, 2.00).passed;
 }
 
+bool test7(){
+    return BooleanAssertTrue("BooleanAssertTrue Basic", true).passed;
+}
+
 void registerCases(){ //Pushes the test cases to the function<bool()> queue
     Controller::addTestCase(test1);
     Controller::addTestCase(test2);
@@ -39,6 +43,7 @@ void registerCases(){ //Pushes the test cases to the function<bool()> queue
     Controller::addTestCase(test4);
     Controller::addTestCase(test5);
     Controller::addTestCase(test6);
+    Controller::addTestCase(test7);
 }
 
 
