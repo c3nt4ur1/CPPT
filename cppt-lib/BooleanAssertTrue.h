@@ -19,8 +19,21 @@ public:
         }
     }
 
-private:
+    BooleanAssertTrue(string testName, bool condition)
+            : Assertion(condition, testName){
+        this->passed = this->assertedCondition;
+
+        if(!this->run()){
+            cerr << "Failed to push out assertion\n";
+            exit(102);
+        }
+    }
+
+
     bool passed;
+
+private:
+
 
     bool run(){
         return outputAssertion();
